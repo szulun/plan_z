@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent;
+  }
+  
+  .font-display {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+  
+  .font-serif {
+    font-family: var(--font-playfair), serif;
+  }
+  
+  .font-mono {
+    font-family: var(--font-jetbrains), monospace;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .font-handwriting {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-heading {
+    font-family: 'Montserrat', 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif;
+  }
+
+  .font-rajdhani {
+    font-family: 'Rajdhani', 'Montserrat', 'Inter', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .font-montserrat-alt {
+    font-family: 'Montserrat Alternates', 'Montserrat', 'Inter', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* 自定義滾動條 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+} 
