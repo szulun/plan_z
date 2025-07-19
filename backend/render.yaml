@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: plan-b-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: ALPHA_VANTAGE_API_KEY
+        sync: false
+      - key: FINNHUB_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false 
