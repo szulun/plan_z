@@ -45,50 +45,54 @@ npm run dev:backend   # 後端 (http://localhost:5001)
 
 ## 🌐 Render 部署
 
-### 1. 後端部署
+### 一次部署前後端
 
-1. 前往 [Render Dashboard](https://dashboard.render.com/)
-2. 點擊 "New +" → "Web Service"
-3. 連接你的 GitHub repository
-4. 設定：
-   - **Name**: `plan-b-backend`
-   - **Root Directory**: `backend`
-   - **Environment**: `Node`
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
+1. **前往 [Render Dashboard](https://dashboard.render.com/)**
+2. **點擊 "New +" → "Blueprint"**
+3. **連接你的 GitHub repository**: `szulun/plan_z`
+4. **Render 會自動偵測 `render.yaml` 並部署兩個服務**
 
-5. 在 Environment Variables 中設定：
-   ```
-   NODE_ENV=production
-   MONGODB_URI=你的MongoDB連線字串
-   ALPHA_VANTAGE_API_KEY=你的Alpha Vantage API Key
-   FINNHUB_API_KEY=你的Finnhub API Key
-   JWT_SECRET=你的JWT密鑰
-   GMAIL_APP_PASSWORD=你的Gmail應用程式密碼
-   ```
+### 部署的服務
 
-### 2. 前端部署
+#### 後端服務 (plan-b-backend)
+- **類型**: Web Service
+- **環境**: Node.js
+- **根目錄**: `backend`
+- **建置指令**: `npm install`
+- **啟動指令**: `npm start`
 
-1. 在 Render Dashboard 點擊 "New +" → "Static Site"
-2. 連接你的 GitHub repository
-3. 設定：
-   - **Name**: `plan-b-frontend`
-   - **Root Directory**: `frontend`
-   - **Build Command**: `npm install && npm run build`
-   - **Publish Directory**: `.next`
+#### 前端服務 (plan-b-frontend)
+- **類型**: Static Site
+- **根目錄**: `frontend`
+- **建置指令**: `npm install && npm run build`
+- **發布目錄**: `.next`
 
-4. 在 Environment Variables 中設定：
-   ```
-   NEXT_PUBLIC_FIREBASE_API_KEY=你的Firebase API Key
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=你的Firebase Auth Domain
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=你的Firebase Project ID
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=你的Firebase Storage Bucket
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=你的Firebase Messaging Sender ID
-   NEXT_PUBLIC_FIREBASE_APP_ID=你的Firebase App ID
-   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=你的Firebase Measurement ID
-   NEXT_PUBLIC_ALPHA_VANTAGE_API_KEY=你的Alpha Vantage API Key
-   NEXT_PUBLIC_BACKEND_URL=https://plan-b-backend.onrender.com
-   ```
+### 環境變數設定
+
+部署完成後，需要在每個服務中設定環境變數：
+
+#### 後端環境變數
+```
+NODE_ENV=production
+MONGODB_URI=你的MongoDB連線字串
+ALPHA_VANTAGE_API_KEY=你的Alpha Vantage API Key
+FINNHUB_API_KEY=你的Finnhub API Key
+JWT_SECRET=你的JWT密鑰
+GMAIL_APP_PASSWORD=你的Gmail應用程式密碼
+```
+
+#### 前端環境變數
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=你的Firebase API Key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=你的Firebase Auth Domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=你的Firebase Project ID
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=你的Firebase Storage Bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=你的Firebase Messaging Sender ID
+NEXT_PUBLIC_FIREBASE_APP_ID=你的Firebase App ID
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=你的Firebase Measurement ID
+NEXT_PUBLIC_ALPHA_VANTAGE_API_KEY=你的Alpha Vantage API Key
+NEXT_PUBLIC_BACKEND_URL=https://plan-b-backend.onrender.com
+```
 
 ## 🔧 環境變數
 
